@@ -62,9 +62,10 @@ function tarjeta(p, moneda, estilo) {
 
 function seccion(s, moneda) {
   const estilo = s.estilo === 'rosa' ? 'rosa' : 'oscuro';
+  const seccionId = s.estilo === 'rosa' ? 'coleccion-dama' : 'coleccion-caballero';
   const productos = (s.productos || []).filter((p) => !p.oculto);
   return `
-    <section class="pagina ${estilo}">
+    <section class="pagina ${estilo}" id="${seccionId}">
       ${DECORACION[estilo]()}
       <h2 class="titulo">${esc(s.titulo || 'Perfumes')}</h2>
       <div class="rejilla">
